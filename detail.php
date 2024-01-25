@@ -9,6 +9,7 @@
     $stmt->bindParam(':post_id', $id);
     $stmt->execute();
     $post = $stmt->fetch(PDO::FETCH_ASSOC);
+    $timestamp = strtotime($post['created_at']);
     // var_dump($post); 
 ?>
         <!-- Page content-->
@@ -22,7 +23,7 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1"><?= $post['title'] ?></h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on <?= $post['created_at'] ?> by <?= $post['u_name'] ?></div>
+                            <div class="text-muted fst-italic mb-2">Posted on <?= date('d M, Y', $timestamp) ?> by <?= $post['u_name'] ?></div>
                             <!-- Post categories-->
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!"><?= $post['c_name'] ?></a>
                         </header>
