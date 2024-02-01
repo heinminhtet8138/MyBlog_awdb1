@@ -7,7 +7,7 @@
     // var_dump($categories);
 ?>
 <!-- Side widgets-->
-<div class="col-lg-4">
+            <div class="col-lg-4">
                     
                     <!-- Categories widget-->
                 <div class="card mb-4">
@@ -27,8 +27,8 @@
                     </div>
                 </div>
                     
-                </div>
             </div>
+        </div>
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
