@@ -34,7 +34,7 @@
                     let id = $(this).data('post_id');
                     console.log(id);
                     $('#postID').val(id);
-                    $('#deleteModal').modal('show');
+                    // $('#deleteModal').modal('show');
                 })
             })
         </script>

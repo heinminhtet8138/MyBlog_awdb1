@@ -1,7 +1,8 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+session_start();
+
+if(isset($_SESSION['user_id'])){
 
     
     require "../dbconnect.php";
@@ -9,7 +10,9 @@ error_reporting(E_ALL);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // ထည့်လိုက်တဲ့ Input Data တွေကကို လက်ခံ 
-        $title = $_POST['title'];
+        $title = sha1($_POST['title']);
+        echo $title;
+        die();
         $category_id = $_POST['category_id'];
         $description = $_POST['description'];
         $user_id = 2;
@@ -106,5 +109,10 @@ error_reporting(E_ALL);
 
 <?php 
     include "layouts/footer.php";
+
+}else {
+    header('location:../index.php');
+}
+
 ?>            
             
